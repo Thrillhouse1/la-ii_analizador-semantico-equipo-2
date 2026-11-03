@@ -17,8 +17,9 @@ public record ErrorSemantico(String nombre, String descripcion, int linea, int i
      */
     public static List<ErrorSemantico> buscarErrores(List<Token> tokens) {
         List<ErrorSemantico> errores = new ArrayList<>();
-        errores.addAll(new ErrorContinue().analizar(tokens)); // 9 - Uso incorrecto de continue
+        // errores.addAll(new ErrorContinue().analizar(tokens)); // 9 - Uso incorrecto de continue
         errores.addAll(new FuncionNoDeclarada().analizar(tokens));// 6- funcion no declarada
+        errores.addAll(new ErrorBreak().analizar(tokens)); // 9 - Uso incorrecto del break
         return errores;
     }
 
