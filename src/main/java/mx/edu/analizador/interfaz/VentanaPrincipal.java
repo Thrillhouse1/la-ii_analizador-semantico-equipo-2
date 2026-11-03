@@ -35,7 +35,7 @@ public class VentanaPrincipal extends JFrame {
             "10 - Conversión de tipos de control",
             "11 - Operación entre tipos incompatibles",
             "12 - Miembro inexistente de una clase",
-            "13 - Llamada incorrecta a un método",
+            "13 - Llamada incorrecta a ugit branch -an método",
             "14 - Objeto de tipo incorrecto",
             "16 - Redefinición / conflicto de identificadores",
             "17 - Referencia incorrecta",
@@ -172,15 +172,15 @@ public class VentanaPrincipal extends JFrame {
 
             // Error 99999999999999999999999999999999
             // Error 9 - Uso incorrecto de continue
-            List<ErrorSemantico> errores = new ErrorContinue().analizar(tokens);
-            for (int i = 0; i < errores.size(); i++) {
-                ErrorSemantico error = errores.get(i);
+            //List<ErrorSemantico> errores = new ErrorContinue().analizar(tokens);
+            for (ErrorSemantico error : ErrorSemantico.buscarErrores(tokens)) {
+              //  ErrorSemantico error = errores.get(i);
                 modeloErrores.addRow(new Object[]{
-                        error.getNombre(),
-                        error.getDescripcion(),
-                        error.getLinea(),
-                        error.getInicio(),
-                        error.getFin()
+                        error.nombre(),
+                        error.descripcion(),
+                        error.linea(),
+                        error.inicio(),
+                        error.fin()
                 });
 
             }///////////////////////////
