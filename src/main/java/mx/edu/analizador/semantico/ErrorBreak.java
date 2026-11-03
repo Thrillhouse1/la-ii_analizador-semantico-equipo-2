@@ -36,7 +36,6 @@ public class ErrorBreak {
 
             if (lexema.equals("break")) {
                 if (llavesCicloOSwitch.isEmpty() && !esperandoBloque) {
-                    // En lugar de imprimir, creamos el objeto ErrorSemantico y lo agregamos a la lista
                     errores.add(new ErrorSemantico(
                             "Uso incorrecto de break",
                             "La instrucción break tiene el propósito específico de romper la ejecución de un ciclo o switch.",
